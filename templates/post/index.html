@@ -6,10 +6,10 @@
 </head>
 <body>
     {% for post in posts %}
-        {{post.id}} <br>
-     <a href="{{ post.get_absolute_url }}">{{post.title}}</a> <br>
-        {{post.content}} <br>
-        {{post.publishing_date}}<br>
+       No: {{post.id}} <br>
+     <a href="{{ post.get_absolute_url }}"> Title: {{post.title}}</a> <br>
+       Content: {{post.content}} <br>
+       Publishing Date: {{post.publishing_date}}<br>
     {% endfor %}
 </body>
 </html>

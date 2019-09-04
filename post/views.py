@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse, get_object_or_404
 from .models import Post
+from .forms import PostForm
 
 
 def post_index(request):
@@ -14,7 +15,26 @@ def post_detail(request,id):
     return render(request,'post/detail.html', context)
 
 def post_create(request):
-    return HttpResponse('Burası post_create sayfası')
+
+    #if request.method == "POST":
+    #    print(request.POST)
+
+    #title = request.POST.get('title')
+    #content = request.POST.get('content')
+    #Post.objects.create(title = title, content = content)
+
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = PostForm()
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'post/form.html', context)
 
 def post_update(request):
     return HttpResponse('Burası post_update sayfası')

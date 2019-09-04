@@ -1,6 +1,7 @@
-from django.shortcuts import render, HttpResponse, get_object_or_404
+from django.shortcuts import render, HttpResponse, get_object_or_404, HttpResponseRedirect, redirect
 from .models import Post
 from .forms import PostForm
+from django.contrib import messages
 
 
 def post_index(request):
@@ -19,16 +20,11 @@ def post_create(request):
     #if request.method == "POST":
     #    print(request.POST)
 
-    #title = request.POST.get('title')
-    #content = request.POST.get('content')
-    #Post.objects.create(title = title, content = content)
-
-    if request.method == "POST":
-        form = PostForm(request.POST)
-        if form.is_valid():
-            form.save()
-    else:
-        form = PostForm()
+    form = PostForm(request.POST or None)
+    if form.is_valid():
+        post = form.save()
+        messages.success(request, 'Post successfully created!')
+        return HttpResponseRedirect(post.get_absolute_url())
 
     context = {
         'form': form,
@@ -36,9 +32,22 @@ def post_create(request):
 
     return render(request, 'post/form.html', context)
 
-def post_update(request):
-    return HttpResponse('Burası post_update sayfası')
+def post_update(request, id):
+    post = get_object_or_404(Post, id=id)
+    form = PostForm(request.POST or None, instance=post)
+    if form.is_valid():
+        form.save()
+        messages.success(request, 'Post updated.')
+        return HttpResponseRedirect(post.get_absolute_url())
 
-def post_delete(request):
-    return HttpResponse('Burası post_delete sayfası')
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'post/form.html', context)
+
+def post_delete(request,id):
+    post = get_object_or_404(Post, id=id)
+    post.delete()
+    return redirect('post:index')
 

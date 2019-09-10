@@ -1,12 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+ {% extends 'base.html' %}
 
-SELAMLAR {{isim}} !
+ {% block title %} HomePage - {{ block.super}} {% endblock %}
 
-</body>
-</html>
+ {% block body %}
+
+   <div class="container-fluid">
+      <div class="row" style="margin-bottom:30px;">
+         <div class="col-md-3 col-sm-6" style="background-color:red; height: 250px;">1. cloumn</div>
+         <div class="col-md-3 col-sm-6" style="background-color:blue; height: 250px;">2. cloumn</div>
+         <div class="col-md-3 col-sm-6" style="background-color:yellow; height: 250px;">3. cloumn</div>
+         <div class="col-md-3 col-sm-6" style="background-color:green; height: 250px;">4. cloumn</div>
+      </div>
+   </div>
+
+
+ {% endblock %}

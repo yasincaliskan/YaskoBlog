@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+ {% extends 'base.html' %}
+
+ {% block body %}
+
     {% for post in posts %}
        No: {{post.id}} <br>
      <a href="{{ post.get_absolute_url }}"> Title: {{post.title}}</a> <br>
        Content: {{post.content}} <br>
        Publishing Date: {{post.publishing_date}}<br>
     {% endfor %}
-</body>
-</html>
+
+
+ {% endblock %}

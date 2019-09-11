@@ -30,6 +30,26 @@
                 </div>
             </div>
         {% endfor %}
+
+        <div class="row">
+                <div class="col-md-12 col-md-offset-5">
+                    <div class="pagination">
+                         <span class="step-links">
+                    {% if contacts.has_previous %}
+                        <a href="?page={{ contacts.previous_page_number }}">previous</a>
+                    {% endif %}
+
+                    <span class="current">
+                        Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+                    </span>
+
+                    {% if posts.has_next %}
+                        <a href="?page={{ posts.next_page_number }}">next</a>
+                    {% endif %}
+                         </span>
+                    </div>
+                </div>
+        </div>
     </div>
 
 

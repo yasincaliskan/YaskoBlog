@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'crispy_forms',
     'django_cleanup',
+    'captcha',
 
 ]
 
@@ -139,6 +140,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 CKEDITOR_JQUERY_URL = os.path.join(STATIC_URL, 'js/jquery.min.js')
 CKEDITOR_BASEPATH = "/staticfiles/ckeditor/ckeditor/"
+
+RECAPTCHA_PUBLIC_KEY = '6Lf77LcUAAAAALHTXLFwr9PbTTcJzcijBgQnItim'
+RECAPTCHA_PRIVATE_KEY = '6Lf77LcUAAAAAEhdyXR2Ct2Z_y8X9EI3Uobh5Khq'
+RECAPTCHA_PROXY = {'http': 'http://127.0.0.1:8000/', 'https': 'http://127.0.0.1:8000/'}
+NOCAPTCHA = True
 
 
 

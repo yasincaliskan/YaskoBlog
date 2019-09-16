@@ -45,7 +45,7 @@ class Post(models.Model):
     class Meta:
         ordering = ['-publishing_date']
 
-    class Comment(models.Model):
+class Comment(models.Model):
         post = models.ForeignKey('post.Post', related_name='comments', on_delete=models.CASCADE)
         name = models.CharField(max_length=180)
         content = models.TextField()

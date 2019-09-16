@@ -18,6 +18,20 @@
                         </p>
                     </div>
                 </div>
+                <br>
+                  <h5>Comments:</h5>
+                  {% for comment in post.comments.all %}
+
+                    <h5>{{ comment.name }} | <small>{{ comment.created_date|timesince }} ago</small></h5>
+                    <p>{{ comment.content|linebreaks }}</p>
+                    <hr/>
+                {% endfor %}
+
+                <br>
+                <h5>Add Comment:</h5>
+                {% include 'post/comment.html' %}
+                <hr>
+
             </div>
         </div>
         </div>

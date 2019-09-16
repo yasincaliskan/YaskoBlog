@@ -1,17 +1,23 @@
  {% extends 'base.html' %}
 
- {% block title %} HomePage - {{ block.super}} {% endblock %}
-
  {% block body %}
 
-   <div class="container-fluid">
-      <div class="row" style="margin-bottom:30px;">
-         <div class="col-md-3 col-sm-6" style="background-color:red; height: 250px;">1. cloumn</div>
-         <div class="col-md-3 col-sm-6" style="background-color:blue; height: 250px;">2. cloumn</div>
-         <div class="col-md-3 col-sm-6" style="background-color:yellow; height: 250px;">3. cloumn</div>
-         <div class="col-md-3 col-sm-6" style="background-color:green; height: 250px;">4. cloumn</div>
-      </div>
+   <div class="container-fluid" style="background-color:gray">
+
+       {% if request.user.is_authenticated %}
+        <h5><b>Welcome, {{ request.user.get_full_name }}</b></h5>
+       {% endif %}
+        <hr>
+       <center>
+
+           <h4> This site was created by Yasin Çalışkan.</h4>
+        <hr>
+           <img src="media/django.png" class="img-fluid" alt="Responsive image">
+           <hr>
+        https://github.com/yasincaliskan
+           <hr>
+
+       </center>
+
    </div>
-
-
  {% endblock %}

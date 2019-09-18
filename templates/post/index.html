@@ -13,7 +13,7 @@
                     <div class="thumbnail">
                         <div class="caption">
                             {% if post.image %}
-                                <img src="{{ post.image.url }}" class="img-thumbnail">
+                                <img src="{{ post.image.url }}" class="img-thumbnail" alt="Responsive image">
                             {% endif %}
                             <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a> <small>{{ post.publishing_date }}</small></h2>
                             <h6>Author:<b> {{ post.user }}</b></h6>

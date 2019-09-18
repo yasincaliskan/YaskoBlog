@@ -2,7 +2,7 @@
 
  {% block body %}
 
-   <div class="container-fluid" style="background-color:gray">
+   <div class="container-fluid">
 
        {% if request.user.is_authenticated %}
         <h5><b>Welcome, {{ request.user.get_full_name }}</b></h5>

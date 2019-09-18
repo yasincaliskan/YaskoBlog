@@ -9,6 +9,6 @@ urlpatterns = [
 
     url(r'^(?P<slug>[\w]+)/$', post_detail, name='detail'),
     url(r'^(?P<slug>[\w]+)/update/$', post_update, name='update'),
-    url(r'^(?P<slug>[\w]+)/delete/$', post_delete, name='delete')
+    url(r'^(?P<slug>[\w]+)/delete/$', post_delete, name='delete'),
 
 ]

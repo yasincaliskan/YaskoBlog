@@ -50,8 +50,6 @@ def post_detail(request,slug):
     return render(request,'post/detail.html', context)
 
 def post_create(request):
-    #if request.user.is_authenticated():
-    #    return Http404
 
     form = PostForm(request.POST or None, request.FILES or None)
     if form.is_valid():
@@ -68,8 +66,6 @@ def post_create(request):
     return render(request, 'post/form.html', context)
 
 def post_update(request, slug):
-    #if request.user.is_authenticated():
-     #   return Http404
 
     post = get_object_or_404(Post, slug = slug)
     form = PostForm(request.POST or None, request.FILES or None, instance=post)
@@ -85,8 +81,6 @@ def post_update(request, slug):
     return render(request, 'post/form.html', context)
 
 def post_delete(request, slug):
-    if request.user.is_authenticated():
-         return Http404
 
     post = get_object_or_404(Post, slug = slug)
     post.delete()

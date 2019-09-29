@@ -1,4 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 
-C:\Users\Yasko\Documents\GitHub\blog-site\ linguist-vendored
+C:\Users\Yasko\Documents\GitHub\yasko-blog\static\js linguist-vendored
+C:\Users\Yasko\Documents\GitHub\yasko-blog\staticfiles\js linguist-vendored
+C:\Users\Yasko\Documents\GitHub\yasko-blog\staticfiles\admin\js linguist-vendored

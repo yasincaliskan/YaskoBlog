@@ -63,7 +63,7 @@ Yapýlan yorumlar postun detay sayfasýnda görüntülenir. Silinen bir posta yapýlan
 
 ![enter image description here](https://lh3.googleusercontent.com/hLnJrl5QPi3CXh00RHK-ZHv3PXqdMlyx__awq3LJ2SYWuTLhiL-pQCs8-Cp9jS5wzedQ0w6Cu3s)
 
-Son paylaþýlan üstte olacak þekilde kronolojik olarak sýralanýr. Her sayfada 5 adet post görüntülenir.
+Son paylaþýlan üstte olacak þekilde kronolojik olarak sýralanýr ve her sayfada 5 adet post görüntülenir.
 
 ## **Post Eklemek**
 
